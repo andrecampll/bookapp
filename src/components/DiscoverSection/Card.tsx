@@ -10,7 +10,7 @@ export function Card() {
       px="5"
       borderRadius="5"
       justify="space-between"
-      minW="81%"
+      minW="71%"
       maxH="139"
       mt="4"
       ml="5"
