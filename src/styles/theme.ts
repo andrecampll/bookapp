@@ -5,6 +5,9 @@ export const theme = extendTheme({
     bridal: {
       'heath': '#FFFBF7'
     },
+    blue: {
+      '800': '#00173D'
+    },
     white: {
       '100': '#FDFCFC',
     },
