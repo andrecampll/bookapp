@@ -6,6 +6,7 @@ export const theme = extendTheme({
       'heath': '#FFFBF7'
     },
     blue: {
+      '400': '#4ABDF1',
       '800': '#00173D'
     },
     white: {
