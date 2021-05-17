@@ -3,6 +3,7 @@ import { Container, Heading, Text } from "@chakra-ui/react";
 import { Input } from "../components/Input";
 import { DiscoverSection } from "../components/DiscoverSection";
 import { ReadingSection } from "../components/ReadingSection";
+import { ReviewsSection } from "../components/ReviewsSection";
 
 export default function Home() {
   return (
@@ -20,6 +21,10 @@ export default function Home() {
 
       <DiscoverSection />
       <ReadingSection />
+
+      <Container py="8" px="5">
+        <ReviewsSection />
+      </Container>
     </>
   )
 }

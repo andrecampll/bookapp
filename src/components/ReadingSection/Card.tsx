@@ -12,7 +12,7 @@ export function Card() {
       justify="space-between"
       minW="88%"
       minH="100"
-      mt="8"
+      my="8"
     >
       <Box position="absolute">
         <Image

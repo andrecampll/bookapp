@@ -1,4 +1,4 @@
-import { Heading, Box, Flex, Link } from "@chakra-ui/react";
+import { Heading, Flex, Link } from "@chakra-ui/react";
 
 import { Card } from "./Card";
 
