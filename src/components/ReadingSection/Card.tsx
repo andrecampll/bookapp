@@ -1,6 +1,6 @@
 import { Flex, Box, Heading, Text, Image } from "@chakra-ui/react";
 
-import { FiInstagram } from 'react-icons/fi';
+import { BiBookBookmark } from 'react-icons/bi';
 
 export function Card() {
   return (
@@ -34,7 +34,7 @@ export function Card() {
         </Text>
 
         <Flex fontSize="10" align="center" color="white.100" mt="5">
-          <FiInstagram />&nbsp;Chapter<Text color="red"> &nbsp;2</Text>&nbsp;From 9
+          <BiBookBookmark />&nbsp;Chapter<Text color="red"> &nbsp;2</Text>&nbsp;From 9
         </Flex>
       </Box>
     </Flex>

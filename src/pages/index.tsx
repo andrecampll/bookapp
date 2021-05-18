@@ -4,10 +4,13 @@ import { Input } from "../components/Input";
 import { DiscoverSection } from "../components/DiscoverSection";
 import { ReadingSection } from "../components/ReadingSection";
 import { ReviewsSection } from "../components/ReviewsSection";
+import { Footer } from "../components/Footer";
 
 export default function Home() {
   return (
     <>
+      <title>BookApp - Home</title>
+
       <Container pt="8" px="5">
         <Input />
 
@@ -25,6 +28,8 @@ export default function Home() {
       <Container py="8" px="5">
         <ReviewsSection />
       </Container>
+
+      <Footer />
     </>
   )
 }
