@@ -14,6 +14,7 @@ export function Footer() {
       gap="20"
       pos="fixed"
       bottom="0"
+      display={["grid", "grid", "none"]}
     >
       <Flex direction="column" align="center">
         <FiHome fontSize="18"/>
