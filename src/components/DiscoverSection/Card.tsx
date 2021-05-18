@@ -7,19 +7,20 @@ export function Card() {
     <Flex
       bgColor="blue.800"
       py="4"
-      px="5"
+      px={["5", ""]}
       borderRadius="5"
       justify="space-between"
       minW="71%"
-      maxH="139"
+      maxH={["139", "200"]}
+      h={["100%", "200"]}
       mt="4"
-      ml="5"
+      ml={["5", "10"]}
     >
       <Box h="100%">
         <Heading color="white.100" fontFamily="Playfair Display">Hooked</Heading>
         <Text color="white.100" fontStyle="italic">Nir Eyal</Text>
 
-        <Flex fontSize="10" align="center" color="white.100" mt="5">
+        <Flex fontSize={["10", "12"]} align="center" color="white.100" mt={["5", "20"]}>
           <BiBarChartSquare />&nbsp;<strong>120+</strong>&nbsp;Read Now
         </Flex>
       </Box>
@@ -27,7 +28,7 @@ export function Card() {
       <Box>
         <Image
           src="https://m.media-amazon.com/images/I/41q7gZyFigL.jpg"
-          maxH="111"
+          maxH={["111", "160"]}
           borderRadius="5"
         />
       </Box>

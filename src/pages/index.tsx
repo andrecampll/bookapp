@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <title>BookApp - Home</title>
 
-      <Container pt="8" px="5">
+      <Container pt="8" px={["5", "40px"]} m={["0 auto", "0"]}>
         <Input />
 
         <Heading fontSize="24" display="flex" my="30" fontWeight="normal">
@@ -25,9 +25,7 @@ export default function Home() {
       <DiscoverSection />
       <ReadingSection />
 
-      <Container py="8" px="5">
-        <ReviewsSection />
-      </Container>
+      <ReviewsSection />
 
       <Footer />
     </>

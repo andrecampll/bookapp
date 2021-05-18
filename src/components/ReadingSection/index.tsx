@@ -5,7 +5,7 @@ import { Card } from "./Card";
 export function ReadingSection() {
   return (
     <>
-      <Flex justify="space-between" align="center" px="5">
+      <Flex justify="space-between" align="center" px={["5", "10"]}>
         <Heading fontSize="18" fontWeight="normal">
           Currently Reading
         </Heading>
