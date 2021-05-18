@@ -1,6 +1,6 @@
 import { Flex, Box, Heading, Text, Image } from "@chakra-ui/react";
 
-import { FiInstagram } from 'react-icons/fi';
+import { BiBarChartSquare } from 'react-icons/bi';
 
 export function Card() {
   return (
@@ -20,7 +20,7 @@ export function Card() {
         <Text color="white.100" fontStyle="italic">Nir Eyal</Text>
 
         <Flex fontSize="10" align="center" color="white.100" mt="5">
-          <FiInstagram />&nbsp;<strong>120+</strong>&nbsp;Read Now
+          <BiBarChartSquare />&nbsp;<strong>120+</strong>&nbsp;Read Now
         </Flex>
       </Box>
 
