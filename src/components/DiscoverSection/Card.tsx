@@ -15,7 +15,7 @@ export function Card() {
         px={["5"]}
         borderRadius="5"
         justify="space-between"
-        maxH={["139", "200"]}
+        maxH={["139", "200", "250"]}
         h={["100%", "200"]}
         mt="4"
         sx={{

@@ -1,4 +1,4 @@
-import { Container } from "@chakra-ui/react";
+import { Box, Container } from "@chakra-ui/react";
 
 import { HeaderContent } from '../../components/BookDetails/HeaderContent';
 import { ActionFooter } from '../../components/BookDetails/ActionFooter';
@@ -9,9 +9,11 @@ export default function Home() {
     <>
       <title>BookApp - Hooked</title>
 
-      <HeaderContent />
+      <Box bgColor="sand.500" w="100%" >
+        <HeaderContent />
+      </Box>
 
-      <Container pt="16" px="5">
+      <Container maxW={['auto', '800px']} pt={["16", "36"]} px="5">
         <Content />
 
         <ActionFooter />

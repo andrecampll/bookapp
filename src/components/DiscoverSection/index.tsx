@@ -18,7 +18,11 @@ export function DiscoverSection() {
         <Link color="blue.400">More</Link>
       </Flex>
 
-      <Box mb="7">
+      <Box
+        mb="7"
+        maxW="1018"
+        mx="auto"
+      >
         <CardSlider />
       </Box>
     </>

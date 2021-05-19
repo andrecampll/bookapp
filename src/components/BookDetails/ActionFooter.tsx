@@ -8,14 +8,19 @@ export function ActionFooter() {
     <Grid
       bgColor="white.100"
       minH="59"
+      maxW="700"
       px="3"
       py="2"
-      templateColumns="repeat(3, 1fr)"
-      gap="2"
+      templateColumns="repeat(3, 3fr)"
+      gap={["2", "8"]}
       pos="fixed"
-      bottom="50"
+      right="0"
+      left="0"
+      mx={["4", "20", "auto"]}
+      bottom={["50", "50", "25"]}
       borderRadius="2"
       boxShadow="3px 3px 23px rgba(107, 103, 70, 0.125901)"
+      as="footer"
     >
       <Button
         bgColor="transparent"
