@@ -1,7 +1,7 @@
 import { Container } from "@chakra-ui/react";
 
-import { HeaderContent } from '../../components/HeaderContent';
-import { ActionFooter } from '../../components/ActionFooter';
+import { HeaderContent } from '../../components/BookDetails/HeaderContent';
+import { ActionFooter } from '../../components/BookDetails/ActionFooter';
 import { Content } from "../../components/BookDetails/Content";
 
 export default function Home() {
