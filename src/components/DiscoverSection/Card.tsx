@@ -3,7 +3,13 @@ import { motion } from "framer-motion";
 
 import { BiBarChartSquare } from 'react-icons/bi';
 
-export function Card() {
+type CardProps = {
+  title: string;
+  authors: string[];
+  image: string;
+}
+
+export function Card({ title, authors, image }: CardProps) {
   return (
     <motion.div
       animate={{ scale: 1 }}
@@ -11,7 +17,7 @@ export function Card() {
     >
       <Flex
         bgColor="blue.800"
-        py="4"
+        py="2"
         px={["5"]}
         borderRadius="5"
         justify="space-between"
@@ -24,19 +30,31 @@ export function Card() {
           }
         }}
       >
-        <Box h="100%">
-          <Heading color="white.100" fontFamily="Playfair Display">Hooked</Heading>
-          <Text color="white.100" fontStyle="italic">Nir Eyal</Text>
+        <Box h="100%" mW={'200'} w="50%">
+          <Heading fontSize={["20", "30", "35"]} color="white.100" fontFamily="Playfair Display">
+            {title}
+          </Heading>
+          <Text fontSize={["12", "14"]} color="white.100" fontStyle="italic">
+            Nir Eyal
+          </Text>
 
-          <Flex fontSize={["10", "12"]} align="center" color="white.100" mt={["5", "20"]}>
+          <Flex
+            fontSize={["10", "12"]}
+            align="center"
+            color="white.100"
+            mt={["2", "5%", "8%"]}
+          >
             <BiBarChartSquare />&nbsp;<strong>120+</strong>&nbsp;Read Now
           </Flex>
         </Box>
 
-        <Box>
+        <Box
+          py="2"
+          w="31%"
+        >
           <Image
-            src="https://m.media-amazon.com/images/I/41q7gZyFigL.jpg"
-            maxH={["111", "160"]}
+            src={image}
+            height="100%"
             borderRadius="5"
           />
         </Box>
