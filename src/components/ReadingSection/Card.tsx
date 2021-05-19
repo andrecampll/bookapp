@@ -22,7 +22,7 @@ export function Card() {
           h={["136", "200", "300"]}
           borderRadius="5"
           position="relative"
-          bottom="30"
+          bottom={["7", "8", "9"]}
         />
       </Box>
 

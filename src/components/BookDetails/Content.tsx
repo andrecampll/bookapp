@@ -12,28 +12,28 @@ export function Content() {
 
       <Box mt="2" mb="32">
         <Text fontSize="16" mb="6" color="gray.500">
-          Why do some products capture widespread attention while others flop?
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius odio quod ipsum natus ipsam cupiditate, pariatur ducimus perspiciatis mollitia ipsa iure sit ut quis! Eveniet similique veritatis est quae fuga!
         </Text>
         <Text fontSize="16" mb="6" color="gray.500">
-          Why do some products capture widespread attention while others flop?
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste iusto vitae cupiditate error ratione repellendus, assumenda aspernatur aliquam laborum beatae, ipsum hic quo quas in odit consectetur quam inventore neque.
         </Text>
         <Text fontSize="16" mb="6" color="gray.500">
-          Why do some products capture widespread attention while others flop?
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste iusto vitae cupiditate error ratione repellendus, assumenda aspernatur aliquam laborum beatae, ipsum hic quo quas in odit consectetur quam inventore neque.
         </Text>
         <Text fontSize="16" mb="6" color="gray.500">
-          Why do some products capture widespread attention while others flop?
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste iusto vitae cupiditate error ratione repellendus, assumenda aspernatur aliquam laborum beatae, ipsum hic quo quas in odit consectetur quam inventore neque.
         </Text>
         <Text fontSize="16" mb="6" color="gray.500">
-          Why do some products capture widespread attention while others flop?
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste iusto vitae cupiditate error ratione repellendus, assumenda aspernatur aliquam laborum beatae, ipsum hic quo quas in odit consectetur quam inventore neque.
         </Text>
         <Text fontSize="16" mb="6" color="gray.500">
-          Why do some products capture widespread attention while others flop?
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste iusto vitae cupiditate error ratione repellendus, assumenda aspernatur aliquam laborum beatae, ipsum hic quo quas in odit consectetur quam inventore neque.
         </Text>
         <Text fontSize="16" mb="6" color="gray.500">
-          Why do some products capture widespread attention while others flop?
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste iusto vitae cupiditate error ratione repellendus, assumenda aspernatur aliquam laborum beatae, ipsum hic quo quas in odit consectetur quam inventore neque.
         </Text>
         <Text fontSize="16" mb="6" color="gray.500">
-          Why do some products capture widespread attention while others flop?
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste iusto vitae cupiditate error ratione repellendus, assumenda aspernatur aliquam laborum beatae, ipsum hic quo quas in odit consectetur quam inventore neque.
         </Text>
       </Box>
     </>
