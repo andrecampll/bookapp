@@ -1,6 +1,6 @@
-import { Container, Heading, Text } from "@chakra-ui/react";
+import { Box, Heading, Text } from "@chakra-ui/react";
 
-import { Input } from "../components/Input";
+import { Header } from "../components/Header";
 import { DiscoverSection } from "../components/DiscoverSection";
 import { ReadingSection } from "../components/ReadingSection";
 import { ReviewsSection } from "../components/ReviewsSection";
@@ -11,8 +11,14 @@ export default function Home() {
     <>
       <title>BookApp - Home</title>
 
-      <Container pt="8" px={["5", "40px"]} m={["0 auto", "0"]}>
-        <Input />
+      <Box
+        w="100%"
+        pt="8"
+        px={["5", "40px"]}
+        m={["0 auto", "0", "0 auto"]}
+        maxW="1018"
+      >
+        <Header />
 
         <Heading fontSize="24" display="flex" my="30" fontWeight="normal">
           Hi,
@@ -20,7 +26,7 @@ export default function Home() {
             &nbsp;Mehmed Al Fatih
           </Text>&nbsp;👋
         </Heading>
-      </Container>
+      </Box>
 
       <DiscoverSection />
       <ReadingSection />

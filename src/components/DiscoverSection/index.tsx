@@ -5,7 +5,13 @@ import { CardSlider } from "./CardSlider";
 export function DiscoverSection() {
   return (
     <>
-      <Flex justify="space-between" align="center" px={["5", "10"]}>
+      <Flex
+        justify="space-between"
+        align="center"
+        px={["5", "10"]}
+        m={["0 auto", "0", "0 auto"]}
+        maxW="1018"
+      >
         <Heading fontSize="18" fontWeight="normal">
           Discover new book
         </Heading>
