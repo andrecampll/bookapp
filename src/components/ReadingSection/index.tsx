@@ -6,11 +6,11 @@ import { apiClient } from "../../services/apiClient";
 import { Card } from "./Card";
 
 type Book = {
+  id: string;
   title: string;
   authors: string[];
   image: string;
 };
-
 
 export function ReadingSection() {
   const [ book, setBook ] = useState<Book>({} as Book);
@@ -20,8 +20,11 @@ export function ReadingSection() {
       const { data } = await apiClient.get('volumes?q=naruto');
 
       const bookData = {
+        id: data.items[0].id,
         title: data.items[0].volumeInfo.title,
-        authors: data.items[0].volumeInfo.authors,
+        authors: data.items[0].volumeInfo.authors.reduce((currentAuthor, nextAuthor) => (
+          `${currentAuthor}, ${nextAuthor}`
+        )),
         image: data.items[0].volumeInfo.imageLinks?.thumbnail,
       };
 
