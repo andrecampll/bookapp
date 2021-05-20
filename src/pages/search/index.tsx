@@ -1,15 +1,12 @@
 import { Box, Text, Grid, Image, Heading } from "@chakra-ui/react";
 
-import { useBooks } from "../../hooks/useBooks";
+import { useSearch } from "../../hooks/useSearch";
 
 import { Header } from "../../components/Header";
-import { DiscoverSection } from "../../components/DiscoverSection";
-import { ReadingSection } from "../../components/ReadingSection";
-import { ReviewsSection } from "../../components/ReviewsSection";
 import { Footer } from "../../components/Footer";
 
-export default function Home() {
-  const { book } = useBooks();
+export default function Search() {
+  const { searchBooks } = useSearch();
 
   return (
     <>
@@ -31,142 +28,32 @@ export default function Home() {
         mx="auto"
         mb="24"
         px={["5","10"]}
-        maxW="937"
+        maxW="999"
       >
         <Grid
           templateColumns={[
             "repeat(3, 1fr)",
-            "repeat(6, 1fr)",
-            "repeat(8, 1fr)"
+            "repeat(3, 1fr)",
+            "repeat(6, 1fr)"
           ]}
           gap="10px"
         >
-          <Box
-
-          >
-            <Image
-              src="http://books.google.com/books/content?id=Y_uCtAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-              borderRadius="5px"
-            />
-            <Box mt="2">
-              <Heading fontSize="12">Naruto</Heading>
-              <Text fontSize="10" fontWeight="bold">
-                By Masashi Kishimoto
-              </Text>
-            </Box>
-          </Box>
-          <Box
-
-          >
-            <Image
-              src="http://books.google.com/books/content?id=Y_uCtAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-              borderRadius="5px"
-            />
-            <Box mt="2">
-              <Heading fontSize="12">Naruto</Heading>
-              <Text fontSize="10" fontWeight="bold">
-                By Masashi Kishimoto
-              </Text>
-            </Box>
-          </Box>
-          <Box
-
-          >
-            <Image
-              src="http://books.google.com/books/content?id=Y_uCtAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-              borderRadius="5px"
-            />
-            <Box mt="2">
-              <Heading fontSize="12">Naruto</Heading>
-              <Text fontSize="10" fontWeight="bold">
-                By Masashi Kishimoto
-              </Text>
-            </Box>
-          </Box>
-          <Box
-
-          >
-            <Image
-              src="http://books.google.com/books/content?id=Y_uCtAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-              borderRadius="5px"
-            />
-            <Box mt="2">
-              <Heading fontSize="12">Naruto</Heading>
-              <Text fontSize="10" fontWeight="bold">
-                By Masashi Kishimoto
-              </Text>
-            </Box>
-          </Box>
-          <Box
-
-          >
-            <Image
-              src="http://books.google.com/books/content?id=Y_uCtAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-              borderRadius="5px"
-            />
-            <Box mt="2">
-              <Heading fontSize="12">Naruto</Heading>
-              <Text fontSize="10" fontWeight="bold">
-                By Masashi Kishimoto
-              </Text>
-            </Box>
-          </Box>
-          <Box
-
-          >
-            <Image
-              src="http://books.google.com/books/content?id=Y_uCtAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-              borderRadius="5px"
-            />
-            <Box mt="2">
-              <Heading fontSize="12">Naruto</Heading>
-              <Text fontSize="10" fontWeight="bold">
-                By Masashi Kishimoto
-              </Text>
-            </Box>
-          </Box>
-          <Box
-
-          >
-            <Image
-              src="http://books.google.com/books/content?id=Y_uCtAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-              borderRadius="5px"
-            />
-            <Box mt="2">
-              <Heading fontSize="12">Naruto</Heading>
-              <Text fontSize="10" fontWeight="bold">
-                By Masashi Kishimoto
-              </Text>
-            </Box>
-          </Box>
-          <Box
-
-          >
-            <Image
-              src="http://books.google.com/books/content?id=Y_uCtAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-              borderRadius="5px"
-            />
-            <Box mt="2">
-              <Heading fontSize="12">Naruto</Heading>
-              <Text fontSize="10" fontWeight="bold">
-                By Masashi Kishimoto
-              </Text>
-            </Box>
-          </Box>
-          <Box
-
-          >
-            <Image
-              src="http://books.google.com/books/content?id=Y_uCtAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-              borderRadius="5px"
-            />
-            <Box mt="2">
-              <Heading fontSize="12">Naruto</Heading>
-              <Text fontSize="10" fontWeight="bold">
-                By Masashi Kishimoto
-              </Text>
-            </Box>
-          </Box>
+          {
+            searchBooks.map((book) => (
+              <Box key={book.id}>
+                <Image
+                  src={book.image}
+                  borderRadius="5px"
+                />
+                <Box mt="2">
+                  <Heading fontSize="12">{book.title}</Heading>
+                  <Text fontSize="10" fontWeight="bold">
+                    By {book.authors}
+                  </Text>
+                </Box>
+              </Box>
+            ))
+          }
         </Grid>
       </Box>
 
