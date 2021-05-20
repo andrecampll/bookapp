@@ -7,7 +7,7 @@ export function Logo() {
       fontWeight="bold"
       letterSpacing="tight"
       display={["none", "none", "flex"]}
-      mr=""
+      mr="5"
       w="64"
     >
       BookApp
