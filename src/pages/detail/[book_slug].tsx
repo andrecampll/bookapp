@@ -1,45 +1,26 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { Box, Container } from "@chakra-ui/react";
 
-import { apiClient } from '../../services/apiClient';
+import { useBooks } from '../../hooks/useBooks';
 
 import { HeaderContent } from '../../components/BookDetails/HeaderContent';
 import { ActionFooter } from '../../components/BookDetails/ActionFooter';
 import { Content } from "../../components/BookDetails/Content";
 
-type Book = {
-  title: string;
-  authors: string[];
-  image: string;
-  description: string;
-};
 
 export default function Detail() {
   const { book_slug } = useRouter().query;
 
-  const [ book, setBook ] = useState<Book>({} as Book);
+  const { readBook, book } = useBooks();
 
   useEffect(() => {
-    async function loadBook() {
-      const { data } = await apiClient.get(`volumes/${book_slug}`);
-
-      const bookData = {
-        title: data.volumeInfo.title,
-        authors: data.volumeInfo.authors.reduce((currentAuthor, nextAuthor) => (
-          `${currentAuthor}, ${nextAuthor}`
-        )),
-        image: data.volumeInfo.imageLinks?.thumbnail,
-        description: data.volumeInfo.description,
-      };
-
-      setBook(bookData);
+    async function loadSelectedBook() {
+      await readBook(book_slug);
     }
 
-    loadBook();
+    loadSelectedBook();
   }, []);
-
-  console.log(book)
 
   return (
     <>

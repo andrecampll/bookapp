@@ -1,10 +1,5 @@
 import { Heading, Box, Text } from "@chakra-ui/react";
-
-type Book = {
-  title: string;
-  authors: string[];
-  description: string;
-};
+import { Book } from '../../hooks/useBooks';
 
 export function Content({ title, authors, description }: Book) {
   return (
