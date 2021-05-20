@@ -1,5 +1,7 @@
 import { Box, Heading, Text } from "@chakra-ui/react";
 
+import { useBooks } from "../hooks/useBooks";
+
 import { Header } from "../components/Header";
 import { DiscoverSection } from "../components/DiscoverSection";
 import { ReadingSection } from "../components/ReadingSection";
@@ -7,6 +9,8 @@ import { ReviewsSection } from "../components/ReviewsSection";
 import { Footer } from "../components/Footer";
 
 export default function Home() {
+  const { book } = useBooks();
+
   return (
     <>
       <title>BookApp - Home</title>
@@ -29,8 +33,7 @@ export default function Home() {
       </Box>
 
       <DiscoverSection />
-      <ReadingSection />
-
+      { book.title && <ReadingSection /> }
       <ReviewsSection />
 
       <Footer />

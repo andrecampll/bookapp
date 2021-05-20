@@ -46,6 +46,7 @@ export function BooksProvider({ children }: BooksProviderProps) {
     const { data } = await apiClient.get(`volumes/${bookId}`);
 
     const bookData = {
+      id: data.id,
       title: data.volumeInfo.title,
       authors: data.volumeInfo.authors.reduce((currentAuthor, nextAuthor) => (
         `${currentAuthor}, ${nextAuthor}`

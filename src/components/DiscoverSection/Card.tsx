@@ -1,15 +1,11 @@
 import { Flex, Box, Heading, Text, Image } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
+import { Book } from "../../hooks/useBooks";
+
 import { BiBarChartSquare } from 'react-icons/bi';
 
-type CardProps = {
-  title: string;
-  authors: string[];
-  image: string;
-}
-
-export function Card({ title, authors, image }: CardProps) {
+export function Card({ title, authors, image }: Book) {
   return (
     <motion.div
       animate={{ scale: 1 }}
@@ -52,7 +48,7 @@ export function Card({ title, authors, image }: CardProps) {
 
         <Box
           py="2"
-          w="31%"
+          w={["31%", "37%", "31%"]}
         >
           <Image
             src={image}
