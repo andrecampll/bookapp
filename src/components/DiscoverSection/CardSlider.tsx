@@ -1,4 +1,5 @@
 import { Grid } from "@chakra-ui/react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import { apiClient } from "../../services/apiClient";
@@ -7,6 +8,7 @@ import { sliceTitles } from "../../utils/sliceTitles";
 import { Card } from "./Card";
 
 type Book = {
+  id: string;
   title: string;
   authors: string[];
   image: string;
@@ -20,6 +22,7 @@ export function CardSlider() {
       const { data } = await apiClient.get('volumes?q=naruto');
 
       const booksData = data.items.map((book) => ({
+        id: book.id,
         title: sliceTitles(book.volumeInfo.title),
         authors: book.volumeInfo.authors,
         image: book.volumeInfo.imageLinks?.thumbnail,
@@ -49,7 +52,11 @@ export function CardSlider() {
     >
       {
         books.map((book, index) => (
-          <Card {...book} key={index} />
+          <Link key={index} href={`detail/${book.id}`}>
+            <a>
+              <Card {...book} />
+            </a>
+          </Link>
         ))
       }
     </Grid>

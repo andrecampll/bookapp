@@ -3,8 +3,6 @@ import { motion } from "framer-motion";
 
 import { BiBarChartSquare } from 'react-icons/bi';
 
-// arr.reduce((x, y ) => x + y)
-
 type CardProps = {
   title: string;
   authors: string[];

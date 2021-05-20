@@ -42,9 +42,7 @@ export function Card({ title, authors, image }: Book) {
           {title}
         </Heading>
         <Text fontSize={["10", "16"]} color="white.100" fontStyle="normal" mt="1">
-          by {authors.reduce((currentAuthor, nextAuthor) => (
-              `${currentAuthor}, ${nextAuthor}`
-            ))}
+          by {authors}
         </Text>
 
         <Flex fontSize={["10", "12", "14"]} align="center" color="white.100" mt={["5", "14", "32"]}>
