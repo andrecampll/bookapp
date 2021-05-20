@@ -1,8 +1,6 @@
 export function sliceTitles(bookTitle: string) {
   const words = bookTitle.split(' ').length;
 
-  console.log(bookTitle.split(' '))
-
   if (words === 6) {
     return bookTitle.slice(0, 6);
   }

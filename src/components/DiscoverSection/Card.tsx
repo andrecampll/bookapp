@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 
 import { BiBarChartSquare } from 'react-icons/bi';
 
+// arr.reduce((x, y ) => x + y)
+
 type CardProps = {
   title: string;
   authors: string[];
@@ -30,12 +32,14 @@ export function Card({ title, authors, image }: CardProps) {
           }
         }}
       >
-        <Box h="100%" mW={'200'} w="50%">
+        <Box h="100%" w="50%">
           <Heading fontSize={["20", "30", "35"]} color="white.100" fontFamily="Playfair Display">
             {title}
           </Heading>
           <Text fontSize={["12", "14"]} color="white.100" fontStyle="italic">
-            Nir Eyal
+            {authors.reduce((currentAuthor, nextAuthor) => (
+              `${currentAuthor}, ${nextAuthor}`
+            ))}
           </Text>
 
           <Flex
