@@ -1,9 +1,11 @@
 import { Box, Text, Grid, Image, Heading } from "@chakra-ui/react";
+import Link from "next/link";
 
 import { useSearch } from "../../hooks/useSearch";
 
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
+import { CardBook } from "../../components/Search/CardBook";
 
 export default function Search() {
   const { searchBooks } = useSearch();
@@ -23,7 +25,6 @@ export default function Search() {
       </Box>
 
       <Box
-        // mx="8"
         mt="10"
         mx="auto"
         mb="24"
@@ -39,19 +40,12 @@ export default function Search() {
           gap="10px"
         >
           {
-            searchBooks.map((book) => (
-              <Box key={book.id}>
-                <Image
-                  src={book.image}
-                  borderRadius="5px"
-                />
-                <Box mt="2">
-                  <Heading fontSize="12">{book.title}</Heading>
-                  <Text fontSize="10" fontWeight="bold">
-                    By {book.authors}
-                  </Text>
-                </Box>
-              </Box>
+            searchBooks.map((book, index) => (
+              <Link key={index} href={`detail/${book.id}`}>
+                <a>
+                  <CardBook {...book} />
+                </a>
+              </Link>
             ))
           }
         </Grid>

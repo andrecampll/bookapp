@@ -14,7 +14,7 @@ export type Book = {
 type BooksContextDTO = {
   book: Book;
   books: Book[];
-  readBook: (bookId: string | string[]) => Promise<Book>;
+  setSelectedBook: (book: Book) => Promise<void>;
 }
 
 type BooksProviderProps = {
@@ -42,26 +42,12 @@ export function BooksProvider({ children }: BooksProviderProps) {
     );
   }, []);
 
-  async function readBook(bookId: string | string[]) {
-    const { data } = await apiClient.get(`volumes/${bookId}`);
-
-    const bookData = {
-      id: data.id,
-      title: data.volumeInfo.title,
-      authors: data.volumeInfo.authors.reduce((currentAuthor, nextAuthor) => (
-        `${currentAuthor}, ${nextAuthor}`
-      )),
-      image: data.volumeInfo.imageLinks?.thumbnail,
-      description: data.volumeInfo.description,
-    };
-
-    setBook(bookData);
-
-    return book;
+  async function setSelectedBook(book: Book) {
+    setBook(book);
   };
 
   return (
-    <BooksContext.Provider value={{ books, book, readBook }}>
+    <BooksContext.Provider value={{ books, book, setSelectedBook }}>
       {children}
     </BooksContext.Provider>
   );
