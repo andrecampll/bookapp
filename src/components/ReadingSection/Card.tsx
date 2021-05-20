@@ -19,7 +19,7 @@ export function Card({ title, authors, image }: Book) {
       justify="space-between"
       minW="88%"
       minH={["100", "165", "250"]}
-      my={["8", "12"]}
+      my={["8", "8", "8"]}
       mx={["0", "0", "auto"]}
     >
       <Box position="absolute">

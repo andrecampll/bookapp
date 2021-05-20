@@ -1,38 +1,11 @@
 import { Grid } from "@chakra-ui/react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-
-import { apiClient } from "../../services/apiClient";
-import { sliceTitles } from "../../utils/sliceTitles";
+import { useBooks } from "../../hooks/useBooks";
 
 import { Card } from "./Card";
 
-type Book = {
-  id: string;
-  title: string;
-  authors: string[];
-  image: string;
-};
-
 export function CardSlider() {
-  const [ books, setBooks ] = useState<Book[]>([]);
-
-  useEffect(() => {
-    async function loadBooks() {
-      const { data } = await apiClient.get('volumes?q=naruto');
-
-      const booksData = data.items.map((book) => ({
-        id: book.id,
-        title: sliceTitles(book.volumeInfo.title),
-        authors: book.volumeInfo.authors,
-        image: book.volumeInfo.imageLinks?.thumbnail,
-      }));
-
-      setBooks(booksData);
-    }
-
-    loadBooks();
-  }, []);
+  const { books } = useBooks();
 
   return (
     <Grid

@@ -10,7 +10,7 @@ export function ReviewsSection() {
         justify="space-between"
         align="center"
         px={["5", "10"]}
-        m={["0", "0", "0 auto 32px"]}
+        m={["0 auto 16px", "0 auto 16px", "0 auto 32px"]}
         maxW="1018"
       >
         <Heading fontSize="18" fontWeight="normal">
