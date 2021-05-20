@@ -24,7 +24,7 @@ export default function Detail() {
 
   return (
     <>
-      <title>BookApp - Hooked</title>
+      <title>BookApp - {book.title}</title>
 
       <Box bgColor="sand.500" w="100%" >
         <HeaderContent bookImage={book.image} />

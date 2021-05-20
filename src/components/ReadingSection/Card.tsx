@@ -1,14 +1,13 @@
+import Link from 'next/link';
 import { Flex, Box, Heading, Text, Image } from "@chakra-ui/react";
+
+import { useBooks } from "../../hooks/useBooks";
 
 import { BiBookBookmark } from 'react-icons/bi';
 
-type Book = {
-  title: string;
-  authors: string[];
-  image: string;
-};
+export function Card() {
+  const { book } = useBooks();
 
-export function Card({ title, authors, image }: Book) {
   return (
     <Flex
       bgColor="blue.800"
@@ -23,13 +22,18 @@ export function Card({ title, authors, image }: Book) {
       mx={["0", "0", "auto"]}
     >
       <Box position="absolute">
-        <Image
-          src={image}
-          h={["136", "200", "300"]}
-          borderRadius="5"
-          position="relative"
-          bottom={["7", "8", "9"]}
-        />
+        <Link href={`detail/${book.id}`}>
+          <a>
+            <Image
+              src={book.image}
+              h={["136", "200", "300"]}
+              maxW="201"
+              borderRadius="5"
+              position="relative"
+              bottom={["7", "8", "9"]}
+            />
+          </a>
+        </Link>
       </Box>
 
       <Box h="100%" ml={["111", "150", "225"]}>
@@ -39,10 +43,10 @@ export function Card({ title, authors, image }: Book) {
           fontFamily="Playfair Display"
           fontSize={["20", "24", "30"]}
         >
-          {title}
+          {book.title}
         </Heading>
         <Text fontSize={["10", "16"]} color="white.100" fontStyle="normal" mt="1">
-          by {authors}
+          by {book.authors}
         </Text>
 
         <Flex fontSize={["10", "12", "14"]} align="center" color="white.100" mt={["5", "14", "32"]}>
