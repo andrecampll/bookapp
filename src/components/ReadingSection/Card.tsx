@@ -2,7 +2,13 @@ import { Flex, Box, Heading, Text, Image } from "@chakra-ui/react";
 
 import { BiBookBookmark } from 'react-icons/bi';
 
-export function Card() {
+type Book = {
+  title: string;
+  authors: string[];
+  image: string;
+};
+
+export function Card({ title, authors, image }: Book) {
   return (
     <Flex
       bgColor="blue.800"
@@ -18,7 +24,7 @@ export function Card() {
     >
       <Box position="absolute">
         <Image
-          src="https://m.media-amazon.com/images/I/41q7gZyFigL.jpg"
+          src={image}
           h={["136", "200", "300"]}
           borderRadius="5"
           position="relative"
@@ -33,10 +39,12 @@ export function Card() {
           fontFamily="Playfair Display"
           fontSize={["20", "24", "30"]}
         >
-          Hooked
+          {title}
         </Heading>
         <Text fontSize={["10", "16"]} color="white.100" fontStyle="normal" mt="1">
-          by Nir Eyal
+          by {authors.reduce((currentAuthor, nextAuthor) => (
+              `${currentAuthor}, ${nextAuthor}`
+            ))}
         </Text>
 
         <Flex fontSize={["10", "12", "14"]} align="center" color="white.100" mt={["5", "14", "32"]}>
