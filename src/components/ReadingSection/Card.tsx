@@ -4,6 +4,7 @@ import { Flex, Box, Heading, Text, Image } from "@chakra-ui/react";
 import { useBooks } from "../../hooks/useBooks";
 
 import { BiBookBookmark } from 'react-icons/bi';
+import { IoMdPhotos } from 'react-icons/io';
 
 export function Card() {
   const { book } = useBooks();
@@ -24,17 +25,32 @@ export function Card() {
       <Box position="absolute">
         <Link href={`detail/${book.id}`}>
           <a>
-            <Image
-              src={
-                book.image ??
-                "https://books.google.com.br/googlebooks/images/no_cover_thumb.gif"
-              }
-              h={["136", "200", "300"]}
-              maxW="201"
-              borderRadius="5"
-              position="relative"
-              bottom={["7", "8", "9"]}
-            />
+            {
+              book.image ? (
+                <Image
+                  src={book.image}
+                  h={["136", "200", "300"]}
+                  maxW="201"
+                  borderRadius="5"
+                  position="relative"
+                  bottom={["7", "8", "9"]}
+                />
+              ) : (
+                <Flex
+                  h={["160px", "200px", "300px"]}
+                  w={["95px", "131px", "196px"]}
+                  maxW="201"
+                  background="gray.100"
+                  borderRadius="5"
+                  position="relative"
+                  bottom={["7", "8", "9"]}
+                  align="center"
+                  justify="center"
+                >
+                  <IoMdPhotos size={20} />
+                </Flex>
+              )
+            }
           </a>
         </Link>
       </Box>
