@@ -21,6 +21,10 @@ export function Card({ title, authors, image }: Book) {
           scrollSnapAlign: 'start'
         }
       }}
+      backgroundImage="url(/svg/oval-large.svg)"
+      backgroundRepeat="no-repeat"
+      backgroundPosition="left bottom"
+      backgroundSize="6rem"
     >
       <Box h="100%" w="50%">
         <Heading fontSize={["20", "30", "35"]} color="white.100" fontFamily="Playfair Display">

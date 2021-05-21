@@ -22,6 +22,9 @@ export function CardSlider() {
         "&": {
           WebkitOverflowScrolling: 'touch',
         },
+        "&::-webkit-scrollbar": {
+          display: 'none',
+        },
       }}
     >
       {

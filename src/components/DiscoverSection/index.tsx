@@ -16,22 +16,6 @@ export function DiscoverSection() {
           Discover new book
         </Heading>
         <Link color="blue.400">More</Link>
-        {/* <Box
-          position="absolute"
-          zIndex="-1"
-          mb="7"
-          maxW={["95vw", "91.5vw"]}
-          w="100%"
-        >
-          <Image
-            src="/svg/Oval.svg"
-            transform="rotate(180deg)"
-            position="relative"
-            top="4.8rem"
-            zIndex="-1"
-            ml="auto"
-          />
-        </Box> */}
       </Flex>
 
       <Box
