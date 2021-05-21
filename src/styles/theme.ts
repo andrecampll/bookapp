@@ -12,16 +12,20 @@ export const theme = extendTheme({
     white: {
       '100': '#FDFCFC',
     },
+    green: {
+      '300': '#EEF5DB',
+    },
     gray: {
       '300': '#CFCBD2',
       '500': '#acacac',
+      '700': '#74776D',
       '900': '#3F4043',
     },
     pink: {
-      '500': '#FA6A78'
+      '500': '#FA6A78',
     },
     sand: {
-      '500': '#FFF6E5'
+      '500': '#FFF6E5',
     }
   },
   fonts: {

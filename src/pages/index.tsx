@@ -1,4 +1,4 @@
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { Box, Heading, Text, Image } from "@chakra-ui/react";
 
 import { useBooks } from "../hooks/useBooks";
 
@@ -32,6 +32,25 @@ export default function Home() {
         </Heading>
       </Box>
 
+      <Box
+        w="100%"
+        maxW="938px"
+        m="0 auto"
+        position="relative"
+      >
+        <Box
+          position="absolute"
+          zIndex="-1"
+          display="flex"
+          justifyContent="flex-end"
+          w="100%"
+        >
+          <Image
+            src="/svg/Oval.svg"
+            transform="rotate(180deg)"
+          />
+        </Box>
+      </Box>
       <DiscoverSection />
       { book.title && <ReadingSection /> }
       <ReviewsSection />
