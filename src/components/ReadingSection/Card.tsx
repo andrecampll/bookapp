@@ -19,7 +19,7 @@ export function Card() {
       justify="space-between"
       minW="88%"
       minH={["100", "165", "250"]}
-      my={["8", "12", "12"]}
+      my={["8", "12"]}
       mx={["0", "0", "auto"]}
     >
       <Box position="absolute">
