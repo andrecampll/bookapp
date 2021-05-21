@@ -59,7 +59,7 @@ export function Card() {
         <Heading
           as="h4"
           fontFamily="Playfair Display"
-          fontSize={["20", "24", "30"]}
+          fontSize={["20", "24", "38"]}
         >
           {book.title}
         </Heading>
