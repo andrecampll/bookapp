@@ -1,4 +1,10 @@
-import { createContext, ReactNode, useContext, useState } from "react";
+import {
+  useState,
+  createContext,
+  ReactNode,
+  useCallback,
+  useContext,
+} from "react";
 
 import { Book } from "./useBooks";
 
@@ -21,22 +27,22 @@ export function SearchProvider({ children }: SearchProviderProps) {
   const [ search, setSearch ] = useState<string | string[]>('');
   const [ books, setBooks ] = useState<Book[]>([]);
 
-  async function createSearch(searchInput: string | string[]) {
+  const createSearch = useCallback(async (searchInput: string) => {
     setSearch(searchInput);
 
     const { data } = await apiClient(`/volumes?q=${searchInput}`);
 
-    console.log(data);
-
     const booksData = data.items.map((book) => ({
       id: book.id,
       title: sliceTitles(book.volumeInfo.title),
-      authors: book.volumeInfo.authors,
+      authors: book.volumeInfo.authors.reduce((currentAuthor, nextAuthor) => (
+        `${currentAuthor}, ${nextAuthor}`
+      )),
       image: book.volumeInfo.imageLinks?.thumbnail,
     }));
 
     setBooks(booksData);
-  }
+  }, [setSearch, setBooks]);
 
   return (
     <SearchContext.Provider

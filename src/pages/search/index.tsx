@@ -37,7 +37,9 @@ export default function Search() {
             "repeat(3, 1fr)",
             "repeat(6, 1fr)"
           ]}
+          templateRows="repeat(3, 1fr)"
           gap="10px"
+          justifyItems="center"
         >
           {
             searchBooks.map((book, index) => (

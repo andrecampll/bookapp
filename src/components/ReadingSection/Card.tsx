@@ -25,7 +25,10 @@ export function Card() {
         <Link href={`detail/${book.id}`}>
           <a>
             <Image
-              src={book.image}
+              src={
+                book.image ??
+                "https://books.google.com.br/googlebooks/images/no_cover_thumb.gif"
+              }
               h={["136", "200", "300"]}
               maxW="201"
               borderRadius="5"

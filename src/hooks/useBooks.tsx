@@ -1,4 +1,11 @@
-import { createContext, ReactNode, useContext, useEffect, useState } from "react";
+import {
+  useState,
+  createContext,
+  ReactNode,
+  useCallback,
+  useContext,
+  useEffect,
+} from "react";
 
 import { apiClient } from "../services/apiClient";
 import { sliceTitles } from "../utils/sliceTitles";
@@ -42,9 +49,9 @@ export function BooksProvider({ children }: BooksProviderProps) {
     );
   }, []);
 
-  async function setSelectedBook(book: Book) {
+  const setSelectedBook = useCallback(async (book: Book) => {
     setBook(book);
-  };
+  }, [setBook]);
 
   return (
     <BooksContext.Provider value={{ books, book, setSelectedBook }}>
