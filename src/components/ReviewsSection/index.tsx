@@ -3,7 +3,6 @@ import { Heading, Flex, Link, Image, Box } from "@chakra-ui/react";
 export function ReviewsSection() {
   return (
     <Box
-      mt="6"
       mb="16"
     >
       <Flex
