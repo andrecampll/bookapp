@@ -1,4 +1,5 @@
 import { Grid } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { useBooks } from "../../hooks/useBooks";
 
@@ -19,17 +20,20 @@ export function CardSlider() {
       pl={["5", "10"]}
       sx={{
         "&": {
-          WebkitOverflowScrolling: 'touch'
+          WebkitOverflowScrolling: 'touch',
         },
       }}
     >
       {
         books.map((book, index) => (
-          <Link key={index} href={`detail/${book.id}`}>
-            <a>
-              <Card {...book} />
-            </a>
-          </Link>
+          <motion.div
+          >
+            <Link key={index} href={`detail/${book.id}`}>
+              <a>
+                <Card {...book} />
+              </a>
+            </Link>
+          </motion.div>
         ))
       }
     </Grid>

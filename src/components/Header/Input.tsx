@@ -31,9 +31,7 @@ export function Input() {
 
         createSearch(search);
 
-        router.push('/search', {
-          search
-        });
+        router.push('/search');
       }}>
         <InputGroup w="100%">
           <InputLeftElement
