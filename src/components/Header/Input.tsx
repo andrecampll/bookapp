@@ -1,24 +1,31 @@
-import { FormEvent, useState } from 'react';
-import { useRouter } from 'next/router';
+import { forwardRef, ForwardRefRenderFunction, useState } from 'react';
+import { FieldError } from 'react-hook-form';
 import {
   Input as ChakraInput,
+  InputProps as ChakraInputProps,
   InputGroup,
   InputLeftElement,
-  Box,
+  FormControl,
 } from '@chakra-ui/react';
 
 import { VscSearch } from 'react-icons/vsc';
 
-import { useSearch } from '../../hooks/useSearch';
+type InputProps = {
+  name: string;
+  placeholder?: string;
+  error: FieldError;
+} & ChakraInputProps;
 
-export function Input() {
-  const router = useRouter();
-  const { search: globalSearch, createSearch } = useSearch();
-
-  const [ search, setSearch ] = useState(globalSearch as string);
-
+const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = ({
+  name,
+  placeholder,
+  error,
+  ...props
+},
+  ref
+) => {
   return (
-    <Box
+    <FormControl isInvalid={!!error}
       w="100%"
       sx={{
         "& > form": {
@@ -26,29 +33,26 @@ export function Input() {
         }
       }}
     >
-      <form onSubmit={async (event: FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-
-        createSearch(search);
-
-        router.push('/search');
-      }}>
-        <InputGroup w="100%">
-          <InputLeftElement
-            pointerEvents="none"
-            children={<VscSearch color="gray" />}
-          />
-          <ChakraInput
-            borderRadius="10"
-            bgColor="white.100"
-            border="0"
-            color="gray.900"
-            placeholder="Search book"
-            value={search}
-            onChange={event => setSearch(event.target.value)}
-          />
-        </InputGroup>
-      </form>
-    </Box>
+      <InputGroup w="100%">
+        <InputLeftElement
+          pointerEvents="none"
+          children={<VscSearch color="gray" />}
+        />
+        <ChakraInput
+          id={name}
+          name={name}
+          borderRadius="10"
+          bgColor="white.100"
+          border="0"
+          color="gray.900"
+          placeholder={placeholder}
+          ref={ref}
+          errorBorderColor="red.500"
+          {...props}
+        />
+      </InputGroup>
+    </FormControl>
   );
 }
+
+export const Input = forwardRef(InputBase);

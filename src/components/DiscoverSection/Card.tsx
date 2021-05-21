@@ -3,6 +3,7 @@ import { Flex, Box, Heading, Text, Image } from "@chakra-ui/react";
 import { Book } from "../../hooks/useBooks";
 
 import { BiBarChartSquare } from 'react-icons/bi';
+import { IoMdPhotos } from "react-icons/io";
 
 export function Card({ title, authors, image }: Book) {
   return (
@@ -45,13 +46,26 @@ export function Card({ title, authors, image }: Book) {
         py="2"
         w={["31%", "37%", "31%"]}
       >
-        <Image
-          src={image ??
-            "https://books.google.com.br/googlebooks/images/no_cover_thumb.gif"
-          }
-          height="100%"
-          borderRadius="5"
-        />
+        {
+          image ? (
+            <Image
+              src={image}
+              height="100%"
+              borderRadius="5"
+            />
+          ) : (
+            <Flex
+              h="100%"
+              background="gray.100"
+              maxW="120"
+              borderRadius="5px"
+              align="center"
+              justify="center"
+            >
+              <IoMdPhotos />
+            </Flex>
+          )
+        }
       </Box>
     </Flex>
   );

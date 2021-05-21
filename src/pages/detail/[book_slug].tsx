@@ -67,7 +67,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     authors: data.volumeInfo.authors.reduce((currentAuthor, nextAuthor) => (
       `${currentAuthor}, ${nextAuthor}`
     )),
-    image: data.volumeInfo.imageLinks?.thumbnail ?? 'https://books.google.com.br/googlebooks/images/no_cover_thumb.gif',
+    image: data.volumeInfo.imageLinks?.thumbnail ?? null,
     description: data.volumeInfo.description,
   };
 

@@ -40,11 +40,17 @@ export default function Search() {
           templateRows="repeat(3, 1fr)"
           gap="10px"
           justifyItems="center"
+          sx={{
+            "& > .no-image": {
+              maxWidth: '128px',
+              width: '100%'
+            }
+          }}
         >
           {
             searchBooks.map((book, index) => (
               <Link key={index} href={`detail/${book.id}`}>
-                <a>
+                <a className={book.image ? '' : 'no-image'}>
                   <CardBook {...book} />
                 </a>
               </Link>
